@@ -1,1 +1,3 @@
 *.yaml
+!*.tmp.yaml
+!*.example.yaml

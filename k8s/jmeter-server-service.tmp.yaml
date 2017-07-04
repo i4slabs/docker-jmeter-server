@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-server-service
+  namespace: {{NAMESPACE}}
+  labels:
+    k8s-app: jmeter-server
+    tier: backend
+spec:
+  type: NodePort
+  ports:
+    - name: service
+      port: 1099
+  selector:
+    k8s-app: jmeter-server
+    tier: backend
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jmeter-server-service
+  namespace: {{NAMESPACE}}
+  annotations:
+   ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: {{ENDPOINT}}
+    http:
+      paths:
+      - path: /jmeter-server
+        backend:
+          serviceName: jmeter-server-service
+          servicePort: 1099
+      - path: /jmeter-server/*
+        backend:
+          serviceName: jmeter-server-service
+          servicePort: 1099
