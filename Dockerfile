@@ -7,6 +7,7 @@ ENV JMETER_HOME /usr/local/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN $JMETER_HOME/bin
 ENV IP 127.0.0.1
 ENV RMI_PORT 1099
+ENV LOCALHOSTNAME 127.0.0.1
 
 RUN apk --update add openjdk8 tar unzip bash && \
     rm -rf /var/cache/apk/*
