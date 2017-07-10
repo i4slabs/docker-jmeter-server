@@ -11,4 +11,5 @@ exec jmeter-server \
     -Djava.rmi.server.hostname=${IP} \
     -Dserver.rmi.port=${SERVER_PORT} \
     -Dserver.rmi.localport=${RMI_LOCALPORT} \
+    -Dclient.rmi.localport=${RMI_LOCALPORT} \
     -Dserver.rmi.localhostname=${LOCALHOSTNAME}
