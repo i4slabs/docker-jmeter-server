@@ -5,8 +5,9 @@ MAINTAINER Hector Cordero <hhcordero@gmail.com>
 ENV JMETER_VERSION 3.2
 ENV JMETER_HOME /usr/local/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN $JMETER_HOME/bin
+ENV SERVER_PORT 55501
 ENV IP 127.0.0.1
-ENV RMI_PORT 1099
+ENV RMI_LOCALPORT 55511
 ENV LOCALHOSTNAME 127.0.0.1
 
 RUN apk --update add openjdk8 tar unzip bash && \
@@ -22,7 +23,8 @@ ENV PATH $PATH:$JMETER_BIN
 
 WORKDIR $JMETER_HOME
 
-EXPOSE $RMI_PORT
+EXPOSE $SERVER_PORT
+EXPOSE $RMI_LOCALPORT
 
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
