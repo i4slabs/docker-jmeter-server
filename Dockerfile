@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-MAINTAINER Hector Cordero <hhcordero@gmail.com>
+MAINTAINER i4slabs
 
 ENV JMETER_VERSION 3.2
 ENV JMETER_HOME /usr/local/apache-jmeter-${JMETER_VERSION}

@@ -42,3 +42,5 @@ $ kubectl create -f k8s/jmeter-server-backend.yaml
 ```
 $ kubectl create -f k8s/jmeter-server-service.yaml
 ```
+## Sources
+The docker container is derived from **hhcordero/docker-jmeter-server**.
