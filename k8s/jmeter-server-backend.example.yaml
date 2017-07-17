@@ -24,7 +24,7 @@ spec:
       hostNetwork: false
       containers:
         - name: jmeter-server-backend
-          image: hhcordero/docker-jmeter-server
+          image: i4slabs/docker-jmeter-server
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 1099
